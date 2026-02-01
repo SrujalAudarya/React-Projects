@@ -1,10 +1,11 @@
-
-import './App.css'
+import './App.css';
+import WeatherApp from './Weather'
 
 function App() {
 
   return (
     <>
+      <WeatherApp/>
     </>
   )
 }

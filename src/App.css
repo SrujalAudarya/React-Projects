@@ -1,42 +1,64 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* 1. Base Container Setup */
+.weather-app-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.5s ease; /* Smooth transition for color changes */
+  background-size: cover;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* 2. Dynamic Background Gradients based on weather */
+.bg-default {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bg-warm {
+  /* Sunny/Hot */
+  background: linear-gradient(135deg, #fce38a 0%, #f38181 100%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.bg-cold {
+  /* Cold/Snow */
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
 }
 
-.card {
-  padding: 2em;
+/* 3. The Glassmorphism Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.25); /* Semi-transparent white */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Soft shadow */
+  backdrop-filter: blur(8px); /* The "Blur" effect */
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white; /* Text color */
 }
 
-.read-the-docs {
-  color: #888;
+/* 4. Glassy Input Fields */
+.glass-input {
+  background: rgba(255, 255, 255, 0.4) !important;
+  border: none !important;
+  color: #fff !important;
+  border-radius: 30px !important;
+  padding: 10px 20px !important;
+}
+
+.glass-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.6) !important;
+  box-shadow: none !important;
+}
+
+.glass-btn {
+  border-radius: 30px !important;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  font-weight: bold;
+}
+
+.glass-btn:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
