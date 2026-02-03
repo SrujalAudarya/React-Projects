@@ -114,3 +114,25 @@
   backdrop-filter: blur(5px);
   margin-top: 20px;
 }
+
+/* App.css */
+body {
+  background-color: #112b41; /* Very dark grey (almost black) */
+  color: #e0e0e0; /* Off-white text for less eye strain */
+}
+
+/* Optional: styling the scrollbar to match dark theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #1f1f1f;
+}
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 5px;
+}
+
+.news-card{
+  border-radius: 5px;
+}
