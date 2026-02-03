@@ -7,6 +7,8 @@ const WeatherApp = () => {
   const [error, setError] = useState('');
   const [bgClass, setBgClass] = useState('bg-default');
 
+  const api = import.meta.env.VITE_API_KEY;
+
   const handleSearch = async (e) => {
     e.preventDefault();
     if (!cityInput) return;
@@ -16,7 +18,7 @@ const WeatherApp = () => {
     setWeatherData(null);
 
     try {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=6f114610b0a37fd54fb571d914e47670&units=metric`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${api}&units=metric`;
       const response = await fetch(url);
       const data = await response.json();
 
