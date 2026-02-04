@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import NewsItem from './NewsItem'; // Import the component we created above
+import axios from 'axios';
 
 function News() {
     const [newsData, setNewsData] = useState([]);
@@ -7,12 +8,21 @@ function News() {
 
     const loadNews = async () => {
         try {
-            const response = await fetch(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${api}`);
-            const data = await response.json();
-            setNewsData(data.articles);
+            const response = await axios.get(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${api}`);
+            
+            // const getData = await response.data;
+            // console.log(getData.articles);
+            
+            console.log(response.data.articles);
+            
+            
+            setNewsData(response.data.articles);
         } catch (err) {
             console.error(err);
         }
+
+        
+        
     }
 
     useEffect(() => {
