@@ -161,3 +161,19 @@ body {
 .content-container {
   padding-top: 80px;
 }
+
+/* Styling for Todo Items */
+.list-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+.list-wrapper::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 10px;
+}
+
+/* Hover effect for tasks */
+.d-flex:hover {
+  background-color: #383838 !important; /* Slightly lighter on hover */
+  transform: translateX(5px);
+  transition: all 0.3s ease;
+}

@@ -1,8 +1,9 @@
 import { BrowserRouter, Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import Navbar from './Navbar';
-import News from './news';
+import News from './News';
 import WeatherApp from './Weather'
+import TodoList from './TodoList'
 
 function App() {
 
@@ -12,13 +13,10 @@ function App() {
       <Navbar/>
       <div className="main-wrapper"> 
         <Routes>
-          <Route path="/" element={<Navigate to="/weather" />} />
-          <Route path="/weather" element={<WeatherApp />} />
-          
-          {/* You might need to add a standard padding wrapper inside your News Component 
-             or just add class="pt-5 mt-5" to the News container div.
-          */}
-          <Route path="/news" element={<div style={{paddingTop: '100px'}}><News /></div>} />
+          <Route path="/" className="pt-5 mt-5" element={<Navigate to="/weather" />} />
+          <Route path="/weather" className="pt-5 mt-5" element={<WeatherApp />} />
+          <Route path="/news" className="pt-5 mt-5" element={<div style={{paddingTop: '100px'}}><News /></div>} />
+          <Route path="/todoList" className="pt-5 mt-5" element={<div style={{paddingTop: '100px'}}><TodoList /></div>} />
         </Routes>
       </div>
     </BrowserRouter>

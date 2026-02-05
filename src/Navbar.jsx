@@ -50,6 +50,15 @@ const Navbar = () => {
               </NavLink>
             </li>
 
+            <li className="nav-item">
+              <NavLink 
+                to="/todoList"
+                className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+              >
+                TODO List
+              </NavLink>
+            </li>
+
           </ul>
         </div>
       </div>
